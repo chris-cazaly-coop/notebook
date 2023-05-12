@@ -45,5 +45,16 @@
     <main>
       <textarea placeholder="HELLO WORLD..."></textarea>
     </main>
+    <script>
+      /* 👇👇👇👇 JAVASCRIPT 👇👇👇👇 */
+      const textarea = document.querySelector("textarea");
+      console.log(textarea);
+      textarea.value = localStorage.getItem("textContent");
+      textarea.onkeyup = () => {
+        localStorage.setItem("textContent", `${textarea.value}`);
+        console.log(localStorage.getItem("textContent"));
+        textarea.innerText = localStorage.getItem("textContent");
+      };
+    </script>
   </body>
 </html>
