@@ -1,0 +1,18 @@
+1 - PAGES State -
+
+const page1 = {
+    id: number,
+    notes: string
+}
+
+const page2 = {
+    id: number,
+    notes: string
+}
+
+const newPageId = 1;
+^ increments when a new page is added
+
+const pages = [page1, page2]
+
+
