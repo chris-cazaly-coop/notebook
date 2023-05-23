@@ -34,8 +34,12 @@ function App() {
     adjustTextAreaHeight(); // Adjustment of textarea height when content changes
   }, [pages, currentPageIndex]);
 
+  useEffect(() => {
+    window.addEventListener("resize", adjustTextAreaHeight); // Adjustment of textarea height when window resizes
+  }, []);
+
   return (
-    <div className="App">
+    <div className="App page-container">
       <h1>App</h1>
       <div className="text-area-wrapper">
         <textarea
