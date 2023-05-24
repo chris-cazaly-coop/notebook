@@ -1,0 +1,9 @@
+run:
+
+    npm run deploy
+
+this should:
+
+    - run tests
+    - create new build
+    - gh-pages plugin then deploys to github pages

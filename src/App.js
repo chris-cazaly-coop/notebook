@@ -23,6 +23,7 @@ function App() {
     const newPages = [...pages];
     newPages[currentPageIndex].textContent = event.target.value;
     setPages(newPages);
+    localStorage.setItem("pages", JSON.stringify(newPages)); // save to local storage
   }
   function adjustTextAreaHeight() {
     const textArea = document.querySelector("textarea");
@@ -36,6 +37,18 @@ function App() {
 
   useEffect(() => {
     window.addEventListener("resize", adjustTextAreaHeight); // Adjustment of textarea height when window resizes
+
+    // Retrieve pages from local storage
+    const pagesFromLocalStorage = JSON.parse(localStorage.getItem("pages"));
+    if (pagesFromLocalStorage) {
+      setPages(pagesFromLocalStorage);
+      setCurrentPageIndex(pagesFromLocalStorage.length - 1);
+    }
+
+    return () => {
+      // Cleanup
+      window.removeEventListener("resize", adjustTextAreaHeight);
+    };
   }, []);
 
   return (

@@ -19,7 +19,7 @@
   },
   "homepage": "https://chris-cazaly-coop.github.io/notebook",
   "scripts": {
-    "predeploy": "npm run build",
+    "predeploy": "npm run test && npm run build",
     "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
