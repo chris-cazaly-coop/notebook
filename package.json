@@ -11,6 +11,12 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prettier && npm run lint && npm run test",
+      "pre-push": "npm run prettier && npm run lint"
+    }
+  },
   "homepage": "https://chris-cazaly-coop.github.io/notebook",
   "scripts": {
     "predeploy": "npm run build",
@@ -40,6 +46,7 @@
   },
   "devDependencies": {
     "gh-pages": "^5.0.0",
+    "husky": "^8.0.3",
     "prettier": "^2.8.8"
   }
 }
