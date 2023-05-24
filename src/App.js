@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import "./App.css";
 
 // comment to test git
+// comment to test git
 
 function App() {
   const [pages, setPages] = useState([{ id: 1, textContent: "" }]);
